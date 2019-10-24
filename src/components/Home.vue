@@ -70,7 +70,7 @@ export default {
 }
 .home-container form {
 	width: 35%;
-    margin-top: 6%;
+	margin-top: 6%;
 	display: flex;
 	position: relative;
 }
