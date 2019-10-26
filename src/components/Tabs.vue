@@ -17,7 +17,7 @@ export default {
 		}
 	},
 	mounted() {
-		console.log(this.tabNames);
+		// console.log(this.tabNames);
 		const tabs = document.querySelectorAll(".tabs a");
 		const selector = document.querySelector(".selector");
 		tabs[0].classList.add("active");
@@ -44,6 +44,7 @@ export default {
 .tabs {
 	display: flex;
 	width: 80%;
+	min-width: 606px;
 	position: relative;
 	margin-top: 2em;
 	list-style: none;

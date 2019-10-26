@@ -28,9 +28,9 @@ export default {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/* background: url(../assets/background.jpg) no-repeat center;
-	background-size: cover; */
 	transition: all 0.5s ease-in;
+	background: url("../assets/background.jpg") no-repeat right;
+	background-size: cover;
 }
 .landing-container button {
 	display: inline-block;
@@ -53,5 +53,17 @@ export default {
 }
 img[alt="robot"] {
 	width: 25%;
+	mix-blend-mode: multiply;
+}
+
+@media only screen and (max-width: 815px) {
+	.landing-container {
+		flex-direction: column-reverse;
+		padding-right: 20%;
+	}
+	img[alt="robot"] {
+		width: 45%;
+		mix-blend-mode: multiply;
+	}
 }
 </style>

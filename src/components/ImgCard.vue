@@ -21,22 +21,21 @@ export default {
 <style scoped>
 .card-container {
 	display: flex;
-	justify-content: flex-start;
+	justify-content: space-between;
 	margin: 0 0 1em 0;
 	padding: 0.5em 1em;
-	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.16), 0 1px 1px rgba(0, 0, 0, 0.23);
 	background-color: white;
 	font-style: italic;
 }
 img {
-	height: 250px;
+	max-height: 100%;
+	max-width: 50%;
 }
 .description {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
-	flex: 1;
 	margin-left: 2em;
 	overflow: hidden;
 }

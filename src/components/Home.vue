@@ -7,9 +7,10 @@
 			<input type="url" v-model="url" placeholder="Please enter an URL to crawl" />
 			<button class="base-btn">Enter</button>
 		</form>
-		<Tabs v-if="response" :tabNames="tabNames" @selected-tab="selectTab" />
+		<i v-show="isLoading" class="fas fa-spinner fa-spin fa-3x"></i>
+		<Tabs v-if="response && !isLoading" :tabNames="tabNames" @selected-tab="selectTab" />
 		<ContentArea
-			v-if="selectedTab"
+			v-if="selectedTab && !isLoading"
 			:content="{key: selectedTab.toLowerCase(), value: response[selectedTab.toLowerCase()]}"
 		/>
 	</div>
@@ -32,12 +33,14 @@ export default {
 			prevUrl: null,
 			response: null,
 			tabNames: [],
-			selectedTab: null
+			selectedTab: null,
+			isLoading: false
 		};
 	},
 	methods: {
 		onSubmit() {
-			if (this.url !== this.prevUrl)
+			if (this.url !== this.prevUrl) {
+				this.isLoading = true;
 				axios
 					.get(
 						`https://cors-anywhere.herokuapp.com/https://mighty-oasis-97765.herokuapp.com?url=${this.url}`
@@ -46,8 +49,9 @@ export default {
 						this.response = res.data;
 						this.tabNames = Object.keys(this.response);
 						console.log(this.response);
+						this.isLoading = false;
 					});
-
+			}
 			this.prevUrl = this.url;
 		},
 		goBack() {
@@ -80,6 +84,7 @@ export default {
 	border: none;
 	box-shadow: 0 6px 6px -5px black;
 	flex: 1;
+	text-overflow: ellipsis;
 }
 
 .base-btn {
@@ -110,5 +115,17 @@ export default {
 	left: 15px;
 	height: 2em;
 	width: 4em;
+}
+
+i[class*="fa-spinner"] {
+	margin-top: 2em;
+	color: #71eec9;
+}
+
+@media only screen and (max-width: 770px) {
+	.home-container form {
+		width: 70%;
+		margin-top: 10%;
+	}
 }
 </style>
