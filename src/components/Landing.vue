@@ -62,8 +62,17 @@ img[alt="robot"] {
 		padding-right: 20%;
 	}
 	img[alt="robot"] {
-		width: 45%;
+		width: 55%;
 		mix-blend-mode: multiply;
+	}
+}
+@media only screen and (max-width: 650px) {
+	.landing-container {
+		background-image: none;
+		padding-right: 0;
+	}
+		img[alt="robot"] {
+		width: 65%;
 	}
 }
 </style>

@@ -43,7 +43,7 @@ export default {
 				this.isLoading = true;
 				axios
 					.get(
-						`https://cors-anywhere.herokuapp.com/https://mighty-oasis-97765.herokuapp.com?url=${this.url}`
+						`https://mighty-oasis-97765.herokuapp.com?url=${this.url}`
 					)
 					.then(res => {
 						this.response = res.data;

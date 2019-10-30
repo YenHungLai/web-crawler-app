@@ -51,6 +51,7 @@ export default {
 	overflow-y: auto;
 	max-height: 69%;
 	margin: 1em 0;
+	padding-right: 1em;
 	max-width: 80%;
 	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }

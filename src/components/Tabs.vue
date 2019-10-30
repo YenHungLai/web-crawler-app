@@ -36,6 +36,8 @@ export default {
 				selector.style.left = e.target.offsetLeft + "px";
 			});
 		});
+
+		document.querySelector(".tabs a").click();
 	}
 };
 </script>
